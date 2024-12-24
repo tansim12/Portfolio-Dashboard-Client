@@ -97,9 +97,9 @@ const CLoginPage = () => {
                 to create your account.
               </p>
               <button
-                onClick={() => {
-                  navigate.push("/register");
-                }}
+                // onClick={() => {
+                //   navigate.push("/register");
+                // }}
                 className="mb-2 inline-flex h-10 w-full items-center justify-center rounded-md bg-zinc-800 px-4 py-2 text-sm font-medium uppercase text-white hover:bg-zinc-700"
               >
                 Create Account
