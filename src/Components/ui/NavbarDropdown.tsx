@@ -27,25 +27,35 @@ export default function NavbarDropdown() {
   const { user, setIsLoading: userSetLoading } = useUser();
   return (
     <>
-      {user?.id ? (
+      {user?._id ? (
         <Dropdown>
           <DropdownTrigger>
-            <div className="flex items-center flex-col justify-center p-2">
+            <div className="flex items-center gap-2">
               <Avatar
                 className="cursor-pointer border-base border-2"
                 src={
-                  user?.userProfile?.[0]?.profilePhoto ||
+                  user?.profilePhoto ||
                   "https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg"
                 }
               />
-              <p className="font-semibold">{user?.name?.slice(0, 10)} </p>
+              <div className="flex flex-col">
+                <span className="font-semibold">
+                  {user?.name?.slice(0, 10)}{" "}
+                  {user?.isVerified && (
+                    <FaCheckCircle className="inline text-green-500" />
+                  )}
+                </span>
+                <span className="text-sm text-gray-500">
+                  {user?.isVerified ? "Verified" : "User"}
+                </span>
+              </div>
             </div>
           </DropdownTrigger>
           <DropdownMenu aria-label="Static Actions">
-           
             <DropdownItem
               onClick={() => handleNavigation(`/${user?.role}/dashboard`)}
-              color="primary" key={""}            >
+              key={""}
+            >
               Dashboard
             </DropdownItem>
             <DropdownItem

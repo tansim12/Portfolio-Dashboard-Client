@@ -13,9 +13,9 @@ export const axiosInstance = axios.create({
 
 // Add a request interceptor
 axiosInstance.interceptors.request.use(
-  function (config) {
+ async function  (config) {
     // Do something before request is sent
-    const accessToken = cookies().get("accessToken")?.value;
+    const accessToken = (await cookies()).get("accessToken")?.value;
     if (accessToken) {
       config.headers.Authorization = `Bearer ${accessToken}`;
     }
@@ -41,7 +41,7 @@ axiosInstance.interceptors.response.use(
       const accessToken = res?.data?.accessToken;
 
       config.headers["Authorization"] = `Bearer ${accessToken}`;
-      cookies().set("accessToken", accessToken);
+      (await cookies()).set("accessToken", accessToken);
 
       return axiosInstance(config);
     } else {
