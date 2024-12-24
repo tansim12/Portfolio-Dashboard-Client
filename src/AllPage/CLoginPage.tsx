@@ -32,7 +32,7 @@ const CLoginPage = () => {
       if (redirect) {
         navigate.push(redirect);
       } else {
-        navigate.push("/");
+        navigate.push("/admin/dashboard");
       }
     }
   }, [isPending, isSuccess]);
