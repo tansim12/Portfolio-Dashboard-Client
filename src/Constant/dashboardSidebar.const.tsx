@@ -19,104 +19,31 @@ interface SidebarItem {
 
 export const sidebarItems: {
   admin: SidebarItem[];
-  user: SidebarItem[];
-  vendor: SidebarItem[];
+  user?: SidebarItem[];
+  vendor?: SidebarItem[];
 } = {
   admin: [
     {
-      name: "Dashboard",
+      name: "Project",
       path: "/admin/dashboard",
       icon: <FaHome />,
     },
 
     {
-      name: "Admin Profile",
-      path: "/admin/profile",
+      name: "Skill",
+      path: "/admin/skill",
       icon: <FaUser />,
-    },
-    {
-      name: "Manage User",
-      path: "/admin/manage-user",
-      icon: <MdOutlineManageAccounts />,
-    },
-    {
-      name: "Manage Payment",
-      path: "/admin/manage-payment",
-      icon: <TbCategory />,
-    },
-    {
-      name: "Manage Shops",
-      path: "/admin/manage-shops",
-      icon: <MdOutlineManageSearch />,
-    },
-    {
-      name: "Manage Category",
-      icon: <TbCategory />,
-      children: [
-        { name: "Category", path: "/admin/manage-category/category" },
-        { name: "Sub-Category", path: "/admin/manage-category/sub-category" },
-      ],
-    },
-    {
-      name: "Manage Products",
-      path: "/admin/manage-products",
-      icon: <TbCategory />,
-    },
-    {
-      name: "My Payments",
-      path: "/admin/payment-history",
-      icon: <TbTransactionDollar />,
-    },
-  ],
-  vendor: [
-    {
-      name: "Dashboard",
-      path: "/vendor/dashboard",
-      icon: <FaHome />,
-    },
-    {
-      name: "Vendor Profile",
-      path: "/vendor/profile",
-      icon: <FaUser />,
-    },
-    {
-      name: "Shop Management",
-      path: "/vendor/shop-management",
-      icon: <MdOutlineManageSearch />,
-    },
-    {
-      name: "Manage Payment",
-      path: "/vendor/manage-payment",
-      icon: <TbCategory />,
-    },
-    {
-      name: "Manage Product",
-      icon: <TbCategory />,
-      children: [
-        {
-          name: "Create Product",
-          path: "/vendor/manage-product/crate-product",
-        },
-        { name: "view Product", path: "/vendor/manage-product/view-product" },
-      ],
-    },
-    {
-      name: "My Payments",
-      path: "/vendor/payment-history",
-      icon: <TbTransactionDollar />,
-    },
-  ],
-  user: [
-    {
-      name: "Dashboard",
-      path: "/user/dashboard",
-      icon: <FiHome />,
     },
 
     {
-      name: "Payments",
-      path: "/user/payment-history",
-      icon: <TbTransactionDollar />,
+      name: "Experience",
+      path: "/admin/experience",
+      icon: <FaUser />,
+    },
+    {
+      name: "Blog",
+      path: "/admin/blog",
+      icon: <FaUser />,
     },
   ],
 };
