@@ -28,3 +28,32 @@ export const adminUpdateExpAction = async (id: any, payload: any) => {
     console.log(error);
   }
 };
+
+//! skill
+export const createSkillAction = async (payload: any) => {
+  try {
+    const res = await axiosInstance.post(`/expAndSkill/skill`, payload);
+    return res?.data?.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const adminFindAllSkillAction = async () => {
+  try {
+    const res = await axiosInstance.get(`/expAndSkill/skill/admin`);
+    return res?.data?.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const adminUpdateSkillAction = async (id: any, payload: any) => {
+  try {
+    const res = await axiosInstance.put(
+      `/expAndSkill/skill/admin/${id}`,
+      payload
+    );
+    return res?.data?.data;
+  } catch (error) {
+    console.log(error);
+  }
+};

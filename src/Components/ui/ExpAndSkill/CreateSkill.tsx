@@ -4,9 +4,9 @@ import React, { useState } from "react";
 import { BsPlus } from "react-icons/bs";
 import CustomModal from "../Custom Modal/CustomModal";
 import { useDisclosure, Button } from "@nextui-org/react";
-import CreateExpForm from "./CreateExpForm";
+import CreateSkillForm from "./CreateSkillForm";
 
-const CreateExp = () => {
+const CreateSkill = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [backdrop, _setBackdrop] = useState("blur");
 
@@ -20,7 +20,7 @@ const CreateExp = () => {
         cancelText="Cancel"
         size="4xl"
       >
-        <CreateExpForm />
+        <CreateSkillForm />
       </CustomModal>{" "}
       <Button
         onClick={() => {
@@ -30,10 +30,10 @@ const CreateExp = () => {
         color="primary"
         size="sm"
       >
-        <BsPlus size={20} /> Create Experience
+        <BsPlus size={20} /> Create Skill
       </Button>
     </>
   );
 };
 
-export default CreateExp;
+export default CreateSkill;
