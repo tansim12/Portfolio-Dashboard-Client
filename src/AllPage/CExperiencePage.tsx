@@ -23,6 +23,7 @@ import NoFoundData from "../Components/ui/No Found/NoFoundData";
 import { useAdminFindALLExp } from "../hook/expAndSkill.hook";
 import CreateExp from "../Components/ui/ExpAndSkill/CreateExp";
 import Image from "next/image";
+import UpdateExpForm from "../Components/ui/ExpAndSkill/UpdateExpForm";
 
 const CExperiencePage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -44,14 +45,14 @@ const CExperiencePage = () => {
 
   const handleEditCategory = (ct: any) => {
     const payload = {
-      categoryName: ct?.categoryName,
+      details: ct?.details,
       isDelete: ct?.isDelete,
-      categoryId: ct?.id,
+      _id: ct?._id,
+      companyLogo: ct?.companyLogo,
     };
     setDefaultValue(payload);
   };
 
-  console.log(expData);
 
   return (
     <div>
@@ -67,8 +68,7 @@ const CExperiencePage = () => {
           cancelText="Cancel"
           size="4xl"
         >
-          hello
-          {/* <CategoryForm defaultValue={defaultValue} isCreate={false} /> */}
+          <UpdateExpForm defaultValue={defaultValue} />
         </CustomModal>{" "}
       </div>
 
